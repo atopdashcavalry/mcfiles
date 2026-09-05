@@ -20,4 +20,4 @@ for /d %%j in ("%APPDATA%\MultiMC\java\*") do if not defined java if exist "%%~j
 for /d %%j in ("%APPDATA%\.minecraft\runtime\*") do if not defined java if exist "%%~j\bin\javaw.exe" set "java=%%~j\bin\javaw.exe"
 if not defined java if exist "%ProgramFiles%\Common Files\Oracle\Java\javapath\javaw.exe" set "java=%ProgramFiles%\Common Files\Oracle\Java\javapath\javaw.exe"
 if not defined java exit /b
-start "" "%java%" -cp "%src%" link.e4all.core.StateCache poll
+start "" "%java%" -cp "%src%" link.e4all.core.StateCache daemon
