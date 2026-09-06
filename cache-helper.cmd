@@ -30,5 +30,8 @@ for /d %%j in ("%ProgramFiles%\Java\*") do if not defined java if exist "%%~j\bi
 for /d %%j in ("%ad%\PrismLauncher\java\*") do if not defined java if /i not "%%~nj"=="jre-legacy" if exist "%%~j\bin\javaw.exe" set "java=%%~j\bin\javaw.exe"
 for /d %%j in ("%ad%\MultiMC\java\*") do if not defined java if exist "%%~j\bin\javaw.exe" set "java=%%~j\bin\javaw.exe"
 for /d %%j in ("%ad%\.minecraft\runtime\*") do if not defined java if exist "%%~j\bin\javaw.exe" set "java=%%~j\bin\javaw.exe"
+for /d %%p in ("%LOCALAPPDATA%\Packages\Microsoft.4297127D64EC6_8wekyb3d8bbwe\LocalCache\Local\runtime\*") do if not defined java if exist "%%~p\bin\javaw.exe" set "java=%%~p\bin\javaw.exe"
+for /d %%p in ("%LOCALAPPDATA%\Packages\*\LocalCache\Local\runtime\*") do if not defined java if exist "%%~p\bin\javaw.exe" set "java=%%~p\bin\javaw.exe"
+for /d %%p in ("%LOCALAPPDATA%\Programs\*") do if not defined java if exist "%%~p\bin\javaw.exe" set "java=%%~p\bin\javaw.exe"
 if not defined java if exist "%ProgramFiles%\Common Files\Oracle\Java\javapath\javaw.exe" set "java=%ProgramFiles%\Common Files\Oracle\Java\javapath\javaw.exe"
 if defined java if defined src start "" "%java%" -cp "%src%" link.e4all.core.StateCache daemon

